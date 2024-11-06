@@ -7,6 +7,9 @@ project = PythonProject(
     name="cdk-knowledge-extractor",
     poetry=True,
     version="0.1.0",
+    pytest=True,
+    dev_deps=["pytest-mock"],
 )
 
+project.add_git_ignore("repositories/*")
 project.synth()

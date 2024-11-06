@@ -12,6 +12,7 @@ readme = "README.md"
 
 [tool.poetry.group.dev.dependencies]
 projen = "0.90.0"
+pytest-mock = "*"
 pytest = "7.4.3"
 
 [build-system]
