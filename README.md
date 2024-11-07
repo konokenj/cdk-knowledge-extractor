@@ -46,7 +46,7 @@ poetry run python -m cdk_knowledge_extractor
 Upload to S3:
 
 ```sh
-aws s3 sync dist/ s3://sample-bucket/integ-tests
+aws s3 sync dist/ s3://sample-bucket/
 ```
 
 ## Contributing

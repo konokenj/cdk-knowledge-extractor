@@ -3,6 +3,27 @@ import os
 import re
 
 
+def find_markdown_files(basedir: str):
+    """
+    Find all markdown files in $basedir .
+    Include: **/*.md
+    Exclude: cli-regression-patches/, *.snapshot/
+
+    Args:
+        basedir (str): base directory of the repository
+    """
+
+    for file in glob.glob(
+        f"{basedir}/**/*.md",
+        recursive=True,
+    ):
+        if "cli-regression-patches/" in file:
+            continue
+        if ".snapshot/" in file:
+            continue
+        yield file
+
+
 def find_integ_test_files(basedir: str):
     """
     Find all integration test files in $basedir/packages/@aws-cdk-testing/framework-integ .
